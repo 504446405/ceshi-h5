@@ -1,6 +1,5 @@
 <template>
   <view>
-    <headerNavigation title=" " :backBl="true"></headerNavigation>
     <view class="order">
       <view class="orderNum">订单号：{{ order.id }}</view>
       <view class="commodity" v-for="(item, index) in order.items" :key="index">

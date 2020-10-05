@@ -1,6 +1,5 @@
 <template>
   <view class="pageContainer">
-    <headerNavigation title="售后单详情" :backBl="true"></headerNavigation>
 
     <view class="header">
       <view v-if="detail.state == 'PENDING'">

@@ -1,6 +1,5 @@
 <template>
   <view class="pageContainer">
-    <headerNavigation title="订单详情" :backBl="true"></headerNavigation>
     <view class="detail">
       <!-- 地址 -->
       <view class="address">
@@ -141,7 +140,7 @@
           :url="'/pages/afterSales/afterSales?orderId=' + orderMsg.id"
           class="cu-btn applyBtn"
           type="default"
-          :data-id="item.id"
+          :data-id="orderMsg.id"
           >申请退款</navigator
         >
       </view>

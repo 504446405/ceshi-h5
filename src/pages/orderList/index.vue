@@ -38,7 +38,6 @@
             :locationName="item.locationName"
             :createdDate="item.createdDate"
             :total="item.total"
-            :orderStateIdx="orderStateIdx"
           ></good>
         </view>
         <view class="itemBottom">
@@ -166,7 +165,7 @@ export default {
     this.getList();
   },
   onLoad(options) {
-    this.tabId = tabs[0].id;
+    this.tabId = this.tabs[0].id;
   },
   onShow() {
     this.getList();

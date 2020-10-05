@@ -1,6 +1,5 @@
 <template>
   <view class="pageContainer">
-    <headerNavigation title="售后列表" :backBl="true"></headerNavigation>
     <!-- 订单状态列表 -->
     <scroll-view
       scroll-x
