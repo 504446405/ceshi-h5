@@ -14,8 +14,8 @@
   </view>
 </template>
 <script >
+import { mapState } from "vuex";
 import { getGoodsListLogin } from "../api/home/index.js";
-let app = getApp();
 export default {
   props: {},
   data() {
@@ -24,8 +24,10 @@ export default {
     };
   },
   created() {
-    this.deviceId = app.globalData.deviceId;
     this.getList();
+  },
+  computed: {
+    ...mapState(["deviceId"]),
   },
   methods: {
     // 获取商品列表

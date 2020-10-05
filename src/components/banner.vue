@@ -11,15 +11,17 @@
 </template>
 <script>
 import AdApi from "@/api/ad.js";
-let app = getApp();
+import { mapState } from "vuex";
 export default {
   data() {
     return {
       ads: [],
     };
   },
+  computed: {
+    ...mapState(["deviceId"]),
+  },
   created() {
-    this.deviceId = app.globalData.deviceId;
     AdApi.getAds({
       deviceId: this.deviceId,
       type: "banner",
