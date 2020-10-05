@@ -40,6 +40,7 @@
   </view>
 </template>
 <script>
+import { getGoodsDetails } from "@/api/goods/index.js";
 export default {
   data() {
     return {
@@ -53,17 +54,62 @@ export default {
       },
     };
   },
-  onLoad(e) {},
-  onShow() {},
+  onLoad(e) {
+    this.goodsId = e.id;
+    this.number = e.number;
+    this.deviceId = e.deviceId;
+  },
+  onShow() {
+    this.list();
+  },
   computed: {},
   onShareAppMessage() {},
   methods: {
+    list() {
+      let obj = {
+        id: this.goodsId,
+        number: this.number, //货道号
+        deviceId: this.deviceId, //设备id
+      };
+      let url = "/quxia/api/wx/products/detail";
+      getGoodsDetails(url, obj).then((res) => {
+        if (res) {
+          if (res.productDetail) {
+            let regex = new RegExp("<img", "gi");
+            res.productDetail = res.productDetail.replace(
+              regex,
+              `<img style="max-width: 100%;"`
+            );
+          } else {
+            res.productDetail = `<p><img src="${res.detailImage}" style="max-width: 100%" /></p>`;
+          }
+          if (!res.displayImages) {
+            res.displayImages = [res.image];
+          }
+          this.goodsDetails = res;
+        }
+      });
+    },
     // 去下单
-    buyGoods() {},
+    buyGoods() {
+      let obj = {
+        deviceId: this.deviceId, //设备id
+        products: [
+          {
+            id: this.goodsId, //商品id
+            quantity: 1, //商品数量
+            number: this.number, //货道号
+          },
+        ],
+      };
+      uni.navigateTo({
+        url: "/pages/submitOrder/index",
+      });
+    },
     // 回首页
     goHome() {
-      uni.navigateBack({
-        delta: 1,
+      uni.redirectTo({
+        url: "/pages/index/index",
       });
     },
   },

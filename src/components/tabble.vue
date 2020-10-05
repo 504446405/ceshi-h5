@@ -1,6 +1,6 @@
 <template>
   <view class="footer">
-    <view class="left" @click="anewOpen">
+    <view :class="[state == 'home' ? 'left state' : 'left']" @click="goHome">
       <view class="icon iconfont iconshouye com-img-active"></view>首页
     </view>
     <view class="center" @click="anewOpen">
@@ -8,7 +8,7 @@
         <image src="../static/icon_open_nor.png" />重新开门</view
       >
     </view>
-    <view class="right" @click="goMine">
+    <view :class="[state == 'mine' ? 'right state' : 'right']" @click="goMine">
       <view class="icon iconfont icongerenye com-img-active"></view>我的
     </view>
   </view>
@@ -16,6 +16,10 @@
 <script >
 export default {
   props: {
+    state: {
+      type: String,
+      default: "home",
+    },
     deviceId: {
       type: String,
       default: "",
@@ -33,11 +37,15 @@ export default {
     anewOpen() {
       this.$emit("anewOpen");
     },
-    scanCode() {
-      this.$emit("scanCode");
+    goHome() {
+      uni.redirectTo({
+        url: "/pages/index/index",
+      });
     },
     goMine() {
-      this.$emit("goMine");
+      uni.redirectTo({
+        url: "/pages/mine/index",
+      });
     },
   },
 };
@@ -61,7 +69,7 @@ export default {
     text-align: center;
     font-size: 24rpx;
     font-weight: 400;
-    color: #ff4a4a;
+    color: #999999;
 
     .icon {
       font-size: 60rpx;
@@ -95,6 +103,9 @@ export default {
     .icon {
       font-size: 60rpx;
     }
+  }
+  .state {
+    color: #ff4a4a;
   }
 }
 </style>

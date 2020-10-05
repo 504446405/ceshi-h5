@@ -40,11 +40,16 @@
         </view>
       </navigator>
     </view>
+    <FooterBtn state="mine" @anewOpen="anewOpen"></FooterBtn>
   </view>
 </template>
 
 <script>
+import FooterBtn from "../../components/tabble.vue";
 export default {
+  components: {
+    FooterBtn,
+  },
   data() {
     return {};
   },

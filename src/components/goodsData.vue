@@ -1,42 +1,48 @@
 <template>
   <view class="box">
-    <view class="goods-data">
-      <image
-        src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=819635182,2054230561&fm=111&gp=0.jpg"
-      />
-      <view class="text a-single-file"
-        >广州富力足球俱乐部今日(1月4 日)宣布,从即日起</view
-      >
-      <view class="price">￥1.00</view>
-    </view>
-    <view class="goods-data">
-      <image
-        src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=819635182,2054230561&fm=111&gp=0.jpg"
-      />
-      <view class="text a-single-file"
-        >广州富力足球俱乐部今日(1月4 日)宣布,从即日起</view
-      >
-      <view class="price">￥1.00</view>
-    </view>
-    <view class="goods-data">
-      <image
-        src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=819635182,2054230561&fm=111&gp=0.jpg"
-      />
-      <view class="text a-single-file"
-        >广州富力足球俱乐部今日(1月4 日)宣布,从即日起</view
-      >
-      <view class="price">￥1.00</view>
+    <view
+      class="goods-data"
+      @click="goDetails(v)"
+      v-for="v in goodsArr"
+      :key="v.number"
+    >
+      <image :src="v.displayImage || v.image" />
+      <view class="text a-single-file">{{ v.name }}</view>
+      <view class="price" v-if="v.stock == 0">售 罄</view>
+      <view class="price" v-else> ￥{{ v.price }} </view>
     </view>
   </view>
 </template>
 <script >
+import { getGoodsListLogin } from "../api/home/index.js";
+let app = getApp();
 export default {
   props: {},
   data() {
-    return {};
+    return {
+      goodsArr: [],
+    };
   },
-  created() {},
-  methods: {},
+  created() {
+    this.deviceId = app.globalData.deviceId;
+    this.getList();
+  },
+  methods: {
+    // 获取商品列表
+    getList() {
+      let deviceId = this.deviceId; //设备id
+      getGoodsListLogin({ deviceId }).then((res) => {
+        if (res) {
+          this.goodsArr = res;
+        }
+      });
+    },
+    goDetails(v) {
+      uni.navigateTo({
+        url: `/pages/goodsDetails/index?id=${v.productId}&number=${v.number}&deviceId=${this.deviceId}`,
+      });
+    },
+  },
 };
 </script>
 <style lang='scss' scoped>

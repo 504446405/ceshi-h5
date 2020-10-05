@@ -3,7 +3,7 @@ export default {
   onLaunch: function () {},
   onShow: function () {},
   onHide: function () {},
-  globalData: {},
+  globalData: { deviceId: "4903906721058310" },
 };
 </script>
 <style>
