@@ -1,16 +1,40 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app"
-			}
-		}
-	],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
-	}
+  "pages": [
+    {
+      "path": "pages/index/index"
+    },
+    {
+      "path": "pages/mine/index"
+    },
+    {
+      "path": "pages/goodsDetails/index"
+    },
+    {
+      "path": "pages/submitOrder/index"
+    },
+    {
+      "path": "pages/paySuccess/index"
+    },
+    {
+      "path": "pages/faq/index"
+    },
+    {
+      "path": "pages/afterSales/afterSales"
+    },
+    {
+      "path": "pages/afterSalesList/index"
+    },
+    {
+      "path": "pages/afterSalesDetail/index"
+    },
+    {
+      "path": "pages/orderDetails/index"
+    },
+    {
+      "path": "pages/orderList/index"
+    }
+  ],
+  "globalStyle": {
+    "navigationStyle": "custom"
+  }
 }

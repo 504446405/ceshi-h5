@@ -1,0 +1,180 @@
+.pageContainer {
+  width : 100%;
+  height: 100%;
+
+  .info {
+    position: relative;
+    width   : 100%;
+    height  : 240rpx;
+
+    .infoBg {
+      position: absolute;
+      width   : 100%;
+      height  : 240rpx;
+      z-index : 1;
+    }
+
+    .msg {
+      position   : relative;
+      z-index    : 2;
+      width      : 100%;
+      height     : 240rpx;
+      display    : flex;
+      align-items: center;
+      padding    : 0 30rpx;
+
+      .avatar {
+        width        : 120rpx;
+        height       : 120rpx;
+        border-radius: 50%;
+      }
+
+      .name {
+        font-size  : 30rpx;
+        font-weight: bold;
+        color      : #FFFFFF;
+        margin-left: 24rpx;
+      }
+    }
+
+  }
+
+  .order {
+    position   : relative;
+    width      : 718rpx;
+    height     : 260rpx;
+    margin     : -40rpx auto 0rpx;
+    padding-top: 25rpx;
+    background : rgba(255, 255, 255, 1);
+    box-shadow : 0rpx 6rpx 15rpx rgba(214, 214, 214, 0.22);
+    opacity    : 1;
+
+    .title {
+      font-size   : 36rpx;
+      font-family : Source Han Sans CN;
+      font-weight : bold;
+      line-height : 52rpx;
+      color       : rgba(49, 49, 49, 1);
+      padding-left: 20rpx;
+      opacity     : 1;
+    }
+
+    .orderTypeList {
+      width     : 100%;
+      padding   : 0rpx 48rpx;
+      margin-top: 35rpx;
+
+      .pendingPayment,
+      .toBeFormed,
+      .toBeDelivered,
+      .toBeReceived,
+      .beEvaluated,
+      .beCompleted {
+        text-align: center;
+
+        .typeIcon {
+          height: 50rpx;
+          margin: 0 auto;
+        }
+
+        .typeText {
+          font-size  : 24rpx;
+          font-family: Source Han Sans SC;
+          font-weight: 400;
+          line-height: 20rpx;
+          color      : rgba(48, 48, 48, 1);
+          opacity    : 1;
+          margin-top : 25rpx;
+        }
+      }
+    }
+  }
+
+  .funList {
+    width        : 718rpx;
+    height       : auto;
+    margin       : 40rpx auto 0rpx;
+    background   : rgba(255, 255, 255, 1);
+    box-shadow   : 0px 8px 15px rgba(241, 241, 241, 0.64);
+    border-radius: 10rpx;
+
+    .funItem {
+      display    : flex;
+      align-items: center;
+      width      : 100%;
+      padding    : 0rpx 43rpx;
+      height     : 100rpx;
+
+      .funIcon {
+        color: #FF547B
+      }
+
+      .icon-wx {
+        width : 40rpx;
+        height: 40rpx;
+      }
+
+      .icondingdan,
+      .icontabbar-_resource-icon {
+        font-size: 40rpx;
+      }
+
+      .iconchangjianwenti {
+        font-size: 41rpx;
+      }
+
+      .iconzu6728 {
+        font-size: 45rpx;
+      }
+
+      .iconhuiguishouhouhong {
+        font-size: 40rpx;
+      }
+
+      .funRight {
+        display        : flex;
+        align-items    : center;
+        justify-content: space-between;
+        height         : 100%;
+        flex           : 1;
+        margin-left    : 48rpx;
+        border-bottom  : 1rpx solid rgba(114, 124, 142, 0.1);
+
+        .funText {
+          font-size  : 24rpx;
+          font-family: Source Han Sans SC;
+          font-weight: 400;
+          line-height: 36rpx;
+          color      : rgba(68, 68, 68, 1);
+          opacity    : 1;
+        }
+
+        .iconBox {
+          display      : flex;
+          align-items  : center;
+          width        : 36rpx;
+          height       : 36rpx;
+          background   : rgba(114, 124, 142, 1);
+          border-radius: 50%;
+          opacity      : 0.2;
+          padding-left : 6rpx;
+
+          .cuIcon-right {
+            display     : inline-block;
+            width       : 16rpx;
+            height      : 16rpx;
+            border-top  : 1rpx solid #fff;
+            border-right: 1rpx solid #fff;
+            transform   : rotate(45deg);
+          }
+        }
+      }
+    }
+
+    .funItem:last-child {
+      .funRight {
+        border-bottom: 0rpx;
+      }
+    }
+  }
+}

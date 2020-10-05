@@ -1,49 +1,60 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view>
-			<text class="title">{{title}}</text>
-		</view>
-	</view>
+  <view class="content">
+    <view class="header">
+      <swiper indicator-dots autoplay>
+        <swiper-item>
+          <image
+            src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3118956596,1809570833&fm=26&gp=0.jpg"
+          />
+        </swiper-item>
+      </swiper>
+    </view>
+    <GoodsData></GoodsData>
+    <FooterBtn
+      @anewOpen="anewOpen"
+      @scanCode="scanCode"
+      @goMine="goMine"
+    ></FooterBtn>
+  </view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
-		onLoad() {
-
-		},
-		methods: {
-
-		}
-	}
+<script >
+import FooterBtn from "../../components/tabble.vue";
+import GoodsData from "../../components/goodsData.vue";
+export default {
+  components: {
+    FooterBtn,
+    GoodsData,
+  },
+  data() {
+    return {};
+  },
+  onLoad() {},
+  methods: {
+    anewOpen() {},
+    scanCode() {},
+    goMine() {},
+  },
+};
 </script>
 
-<style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin: 200rpx auto 50rpx auto;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
+<style lang='scss' scoped>
+page {
+  background-color: #f1f1f1;
+}
+.content {
+  padding-bottom: 160rpx;
+}
+.header {
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  swiper,
+  swiper-item,
+  image {
+    width: 100%;
+    height: 320rpx;
+    border-radius: 8rpx;
+  }
+}
 </style>
