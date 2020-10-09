@@ -40,7 +40,12 @@
   </view>
 </template>
 <script>
-import { getGoodsDetails } from "@/api/goods/index.js";
+import {
+  getGoodsDetails,
+  getOrdersCalculateTotal,
+  getPlaceAnOrderData,
+  getPlaceAnOrderId,
+} from "@/api/goods/index.js";
 export default {
   data() {
     return {
@@ -71,7 +76,7 @@ export default {
         number: this.number, //货道号
         deviceId: this.deviceId, //设备id
       };
-      let url = "/quxia/api/wx/products/detail";
+      let url = "/quxia/api/public/products/detail";
       getGoodsDetails(url, obj).then((res) => {
         if (res) {
           if (res.productDetail) {
@@ -91,19 +96,53 @@ export default {
       });
     },
     // 去下单
-    buyGoods() {
+    async buyGoods() {
+      let that = this;
       let obj = {
-        deviceId: this.deviceId, //设备id
+        deviceId: that.deviceId, //设备id
         products: [
           {
-            id: this.goodsId, //商品id
+            id: that.goodsId, //商品id
             quantity: 1, //商品数量
-            number: this.number, //货道号
+            number: that.number, //货道号
           },
         ],
       };
-      uni.navigateTo({
-        url: "/pages/submitOrder/index",
+      let notify_url = "/cityfx/order/notify";
+      let successful_jump = "pages/paySuccess/index";
+      let fail_jump = "pages/payFail/index";
+      let e = await getPlaceAnOrderId(obj);
+      getPlaceAnOrderData(obj).then((res) => {
+        let obj = {
+          partner_id: "",
+          out_trade_no: e.id,
+          goods_name: res.products.name,
+          buy_num: res.totalQuantity,
+          cost_price: res.products.price,
+          sales_price: res.products.price,
+          total_fee: res.subTotal,
+          device_no: that.deviceId,
+          gate_no: res.products.number,
+          notify_url,
+          successful_jump,
+          fail_jump,
+        };
+        jWeixin.miniProgram.getEnv(function (res) {
+          jWeixin.miniProgram.redirectTo({
+            url: `/pages/index/index?partner_id=${""}&out_trade_no=${
+              e.id
+            }&goods_name=${res.products.name}&buy_num=${
+              res.totalQuantity
+            }&cost_price=${res.products.price}&sales_price=${
+              res.products.price
+            }&total_fee=${res.subTotal}&device_no=${that.deviceId}&gate_no=${
+              res.products.number
+            }&notify_url=${notify_url}&successful_jump=${successful_jump}&fail_jump=${fail_jump}`,
+          });
+          wx.miniProgram.postMessage({
+            data: obj,
+          });
+        });
       });
     },
     // 回首页

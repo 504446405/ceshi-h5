@@ -6,12 +6,12 @@
         <view class="icon">
           <view class="iconfont iconhuowu"></view>
         </view>
-        <view class="text">支付成功，正在出货中</view>
+        <view class="text">支付失败，请重新购买</view>
       </view>
     </view>
     <view class="footer-btn">
       <!-- <view class="one" @click="examineOrder">查看订单</view> -->
-      <view class="there" @click="backHome">返回首页</view>
+      <view class="there" @click="backHome">返回商品列表</view>
     </view>
   </view>
 </template>

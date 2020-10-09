@@ -8,34 +8,27 @@ export function getGoodsDetails(url, data) {
 		data
 	})
 }
-// 商品下单数据获取
-export function getOrdersInfo(data) {
-	return request({
-		url: '/quxia/api/wx/checkout/info',
-		method: 'POST',
-		data
-	})
-}
 // 商品下单 总价计算
 export function getOrdersCalculateTotal(data) {
 	return request({
-		url: '/quxia/api/wx/checkout/calculatePrice',
+		url: '/quxia/api/public/checkout/calculatePrice',
 		method: 'POST',
 		data
 	})
 }
-// 商品下单 获取支付订单id 支付参数
-export function getPayId(data) {
+// 商品下单 获取下单信息
+export function getPlaceAnOrderData(data) {
 	return request({
-		url: '/quxia/api/wx/checkout',
+		url: '/quxia/api/public/checkout/info',
 		method: 'POST',
 		data
 	})
 }
-// 商品下单 根据支付订单id获取支付参数
-export function getPayData(data) {
+
+// 商品下单 获取下单信息
+export function getPlaceAnOrderId(data) {
 	return request({
-		url: `/quxia/api/wx/orders/pay?id=${data.id}`,
+		url: '/quxia/api/public/checkout',
 		method: 'POST',
 		data
 	})

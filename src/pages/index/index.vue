@@ -1,8 +1,8 @@
 <template>
   <view class="content">
-    <Banner></Banner>
+    <!-- <Banner></Banner> -->
     <GoodsData></GoodsData>
-    <FooterBtn state="home" @anewOpen="anewOpen"></FooterBtn>
+    <!-- <FooterBtn state="home" @anewOpen="anewOpen"></FooterBtn> -->
   </view>
 </template>
 
@@ -32,7 +32,7 @@ export default {
 page {
   background-color: #f1f1f1;
 }
-.content {
-  padding-bottom: 160rpx;
-}
+// .content {
+//   padding-bottom: 160rpx;
+// }
 </style>

@@ -4,9 +4,6 @@
       "path": "pages/index/index"
     },
     {
-      "path": "pages/mine/index"
-    },
-    {
       "path": "pages/goodsDetails/index"
     },
     {
@@ -16,22 +13,7 @@
       "path": "pages/paySuccess/index"
     },
     {
-      "path": "pages/faq/index"
-    },
-    {
-      "path": "pages/afterSales/afterSales"
-    },
-    {
-      "path": "pages/afterSalesList/index"
-    },
-    {
-      "path": "pages/afterSalesDetail/index"
-    },
-    {
-      "path": "pages/orderDetails/index"
-    },
-    {
-      "path": "pages/orderList/index"
+      "path": "pages/payFail/index"
     }
   ],
   "globalStyle": {
