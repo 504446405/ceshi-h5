@@ -83,7 +83,7 @@
       "mode": "hash",
       "base": ""
     },
-    "domain": "file:///E:/酷抓工作代码/景区码/my-project-h5/dist/build/h5",
+    "domain": "https://504446405.github.io/ceshi-h5/dist/",
     "template": "template.h5.html"
   }
 }
