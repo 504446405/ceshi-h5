@@ -13,7 +13,7 @@ if (window.location && window.location.search) {
   let theRequest = url.split("=");
   store.commit('setDeviceId', theRequest[1])
 }
-store.commit('setDeviceId', 4903906721058310)
+// store.commit('setDeviceId', 4903906721058310)
 const app = new Vue({
   ...App,
   store

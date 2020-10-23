@@ -83,7 +83,7 @@
       "mode": "hash",
       "base": ""
     },
-    "domain": "https://dph5.dipinzn.com",
+    "domain": "file:///E:/酷抓工作代码/景区码/my-project-h5/dist/build/h5",
     "template": "template.h5.html"
   }
 }

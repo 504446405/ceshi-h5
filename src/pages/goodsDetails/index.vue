@@ -139,7 +139,7 @@ export default {
               res.products.number
             }&notify_url=${notify_url}&successful_jump=${successful_jump}&fail_jump=${fail_jump}`,
           });
-          wx.miniProgram.postMessage({
+          jWeixin.miniProgram.postMessage({
             data: obj,
           });
         });
