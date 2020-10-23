@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>123</title>
+  </head>
+  <body>
+    <button id="box">点击</button>
+
+    <script>
+      // let box = document.getElementById("box");
+      // box.addEventListener("click", () => {
+      //   alert("123");
+      // });
+      // box.addEventListener("click", () => {
+      //   console.log(box);
+      // });
+      // box.onclick = function() {
+      //   alert("123");
+      // };
+      // box.onclick = function() {
+      //   console.log(box);
+      // };
+
+      // window.name = "字符串";
+      // function fn() {
+      //   let bl = confirm("确定好了吗");
+      //   if (bl) {
+      //     window.location = "http://taobao.com";
+      //   }
+      // }
+      // fn();
+      // console.log(true + true);
+      // let i = "1" * "1";
+      // console.log(i);
+      // debugger;
+      // function fn(n) {
+      //   if (n <= 1) return 1;
+      //   return n * fn(n - 1);
+      // }
+      // fn(10);
+      // let i = 2;
+      // switch (i) {
+      //   case 1:
+      //     console.log(123);
+      //     break;
+      //   case 2:
+      //     console.log(456);
+      //     break;
+
+      //   default:
+      //     console.log(789);
+      //     break;
+      // }
+      // let arr = [1, 2, 3, 4, 5];
+      // let i = 0;
+      // while (i < arr.length) {
+      //   console.log(arr[i]);
+      //   ++i;
+      // }
+      // let obj = {
+      //   name: 1,
+      //   sex: 2,
+      //   age: 3
+      // };
+      // for (var p in obj) {
+      //   console.log(obj[p]);
+      // }
+      // let str = 1;
+      // function fn() {
+      //   if (str == 1) throw new Error("错误");
+      //   console.log(123);
+      // }
+      // fn();
+      // let arr = [1, 2, 3, 4, 5, 6];
+      // for (var i = 0; i < arr.length; i++) {
+      //   // console.log(i);
+      //   if (i == 4) continue;
+      //   console.log(i);
+      // }
+      // let p = {
+      //   name: "1231"
+      // };
+      // function fn(p) {
+      //   function f() {}
+      //   f.prototype = p;
+      //   return new f();
+      // }
+      // let obj = fn();
+      // console.log(obj);
+
+      // function Fn() {
+      //   this.name = 123;
+      // }
+      // var fn2 = {
+      //   age: 123
+      //   // sayHello: function() {
+      //   //   console.log("方式1：替换原型对象");
+      //   // }
+      // };
+      // Fn.prototype = fn2;
+      // var obj = new Fn();
+      // // obj.sayHello();
+      // console.log(obj.age);
+
+      // var p = {
+      //   name: "1231"
+      // };
+      // function fn(p) {
+      //   function f() {}
+      //   f.prototype = p;
+      //   return new f();
+      // }
+      // let obj = fn(p);
+      // console.log(obj.name);
+
+      // let obj = {
+      //   x: 1,
+      // };
+      // console.log(Object.getOwnPropertyDescriptor(obj, "x"));
+      // let obj2 = {
+      //   get t() {
+      //     return 123;
+      //   },
+      // };
+      // console.log(Object.getOwnPropertyDescriptor(obj2, "t"));
+
+      // let obj = { x: 1, y: 2 };
+      // console.log(Object.keys(obj));
+
+      // let obj = {};
+      // Object.defineProperty(obj, "x", {
+      //   value: 6,
+      //   writable: true,
+      //   enumerable: false,
+      //   configurable: true,
+      // });
+      // // console.log(obj, Object.keys(obj));
+      // Object.defineProperty(obj, "x", {
+      //   writable: false,
+      // });
+      // obj.x = 2;
+      // console.log(obj);
+      // Object.defineProperty(obj, "x", {
+      //   value: 5,
+      // });
+      // console.log(obj);
+      // Object.defineProperty(obj, "x", {
+      //   get: function () {
+      //     return 0;
+      //   },
+      // });
+      // console.log(obj);
+
+      // let obj = {
+      //   x: 1,
+      // };
+      // Object.preventExtensions(obj);
+      // let bl = Object.isExtensible(obj);
+      // console.log(bl);
+
+      // let obj = {
+      //   x: 1,
+      //   y: 2,
+      //   z: 3,
+      // };
+      // let keys = Object.keys(obj);
+      // let arr = [];
+      // for (var i = 0; i < keys.length; i++) {
+      //   arr[i] = obj[keys[i]];
+      // }
+      // console.log(arr);
+
+      // let obj = {
+      //   x: 3,
+      //   y: 2,
+      //   z: 3,
+      // };
+      // let keys = Object.keys(obj);
+      // let arr = {};
+      // for (var i = 0; i < keys.length; i++) {
+      //   arr[i] = obj[keys[i]];
+      // }
+      // console.log(arr['0']);
+
+      // let a = [3, 5, 2, 1];
+      // let arr = a.sort((a, b) => {
+      //   console.log(a, b);
+      //   console.log(a - b);
+      //   return a - b;
+      // });
+      // console.log(arr);
+
+      // let arr1 = [1, 2, 3];
+      // let arr2 = arr1;
+      // arr2[3] = 4;
+      // console.log(arr1, arr2);
+
+      // let arr = [
+      //   {
+      //     x: 4,
+      //   },
+      //   {
+      //     x: 1,
+      //   },
+      //   {
+      //     x: 3,
+      //   },
+      //   {
+      //     x: 2,
+      //   },
+      // ];
+      // let arr1 = arr.sort((x, y) => {
+      //   if (x.x > y.x) return -1;
+      //   if (x.x < y.x) return 1;
+      // });
+      // console.log(arr)
+
+      // function obj(name) {
+      //   if (name) {
+      //     this.name = name;
+      //   }
+      //   return this;
+      // }
+      // obj.prototype.name = "name2";
+      // var a = obj("name1");
+      // var b = new obj();
+      // console.log(a.name, b.name);
+
+      // function fn(str, arr) {
+      //   arr.forEach((v) => {
+      //     str = str.replace(new RegExp(v, "g"), "");
+      //   });
+      //   return str;
+      // }
+      // fn("阿斯顿发了带回来", ["阿", "回来"]);
+      // console.log(fn("阿斯顿发了带回来", ["阿", "回来"]));
+
+      // function fn(arr) {
+      //   let str = arr[0].substr(arr[0].length - 2, 2);
+      //   let bl = arr.every((v) => {
+      //     return str == v.substr(v.length - 2, 2);
+      //   });
+      //   if (bl) {
+      //     return `${str}结尾`;
+      //   } else {
+      //     return "没有通用结尾";
+      //   }
+      // }
+      // console.log(fn(["asdf", "dfdfs", "jkjldf"]));
+
+      // var x = 10;
+      // function cals(v) {
+      //   return x + v;
+      // }
+      // cals(7);
+      // console.log(cals(7))
+
+      // let str = "两年多";
+      // for (let i of str) {
+      //   console.log(i);
+      // }
+
+      // const getQueryObject = function (url) {
+      //   if (url) {
+      //     let split = url.split("?");
+
+      //     if (split.length > 1) {
+      //       var query = split[1];
+
+      //       let result = {};
+
+      //       let pairs = query.split("&");
+
+      //       pairs.forEach((item) => {
+      //         let split = item.split("=");
+      //         if (split.length > 1) {
+      //           result[split[0]] = split[1];
+      //         }
+      //       });
+
+      //       return result;
+      //     }
+      //   }
+      // };
+      // console.log(
+      //   getQueryObject(
+      //     "https://developers.weixin.qq.com/miniprogram/introduction/qrcode.html?id=23"
+      //   )
+      // );
+
+      // let obj = {
+      //   x: 3,
+      //   y: 2,
+      //   z: 3,
+      // };
+      // for (let i in obj) {
+      //   console.log(obj[i]);
+      // }
+      // let obj = {
+      //   x: 3,
+      //   y: 2,
+      //   z: 3,
+      // };
+      // let arr = [1, 2, 3, 4];
+      // for (let i of arr) {
+      //   console.log(i);
+      // }
+
+      // var theThing = null;
+      // var replaceThing = function () {
+      //   var originalThing = theThing;
+      //   var unused = function () {
+      //     if (originalThing) console.log("hi");
+      //   };
+      //   theThing = {
+      //     longStr: new Array(1000000).join("*"),
+      //     someMethod: function () {
+      //       console.log(someMessage);
+      //     },
+      //   };
+      // };
+      // setInterval(replaceThing, 1000);
+
+
+      function initialFn(a, b) {
+        console.log(a + b, "中间");
+      }
+      function before(e) {
+        console.log("前面");
+      }
+      function after(e) {
+        console.log("后面");
+      }
+      function constructorFn(self, before, after) {
+        function _class() {
+          before.apply(this, arguments);
+          self.apply(this, arguments);
+          after.apply(this, arguments);
+        }
+        return _class;
+      }
+      initialFn = constructorFn(initialFn, before, after);
+      initialFn(1, 2);
+    </script>
+  </body>
+</html>
