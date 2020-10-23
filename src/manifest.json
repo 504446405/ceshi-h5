@@ -81,9 +81,9 @@
     "title": "趣匣",
     "router": {
       "mode": "hash",
-      "base": ""
+      "base": "/ceshi-h5/dist/build/h5/"
     },
-    "domain": "https://504446405.github.io/ceshi-h5/dist/build/h5/",
+    "domain": "https://504446405.github.io",
     "template": "template.h5.html"
   }
 }
